@@ -1,4 +1,5 @@
 import math
+import random
 
 '''Kérj be egy [200, 920] intervallumban lévő egész számot (ha nem ebben az intervallumban van, jelezz hibát!), majd írasd ki az első számjegyét!'''
 
@@ -15,7 +16,7 @@ A 2-3. órában már kissé éhesek, és csupán 60%-os a munkabírásuk. A 4-7.
 így némiképp javul a hatékonyságuk (70%), a 8-9. órában azonban már újra lecsökken (50%).
 Írj metódust, mely paraméterében kap egy egész számot 1 és 9 között (melyik órán vannak; jelezz hibát,
 ha nem ebben az intervallumban lévő számot kapsz, pl. “Ez már tényleg túlzás.”).
-Példa egy esetre: Be: 3, Ki: “Még bírjuk (60%).”    -  nem kell tesztfüggvényeket írni, de az alábbi táblázat alapján ellenőrizzétek a munkátokat!'''
+Példa egy esetre: Be: 3, Ki: “Még bírjuk (60%).”  -  nem kell tesztfüggvényeket írni, de az alábbi táblázat alapján ellenőrizzétek a munkátokat!'''
 
 def masodik(szam:int):
     if(szam>=1):
@@ -74,5 +75,33 @@ def negyedik():
         print("A szám nem megfelelő!")
 
 
+'''Írj metódust, amelyben 13 véletlen egész számot generálunk [-5;12) intervallumban. A metódus térjen vissza a listával. a következő függvények esetén ezzel a listával dolgozz tovább. Az eredmény kiírása mindig a main.py-ban történjen!
 
+Mennyi a páros számok összege? 
+A páros, vagy a páratlan számok összege a nagyobb? 
+Mennyi a számok átlaga? 
+Mekkora a legnagyobb szám?'''
+def otodik():
+    vel_lista=[]
+    i:int=0
+    while(i<13):
+        vel_szam:int= int(random.random()*18)-5
+        vel_lista.append(vel_szam)
+        i+=1
+    return vel_lista
 
+'''Hány pozitív és hány negatív szám van? '''
+def a_otodik(vel_lista):
+    i:int=0
+    poz:int=0
+    neg:int=0
+    null:int=0
+    while(i<len(vel_lista)):
+        if(vel_lista[i]<0):
+            neg+=1
+        elif(vel_lista[i]>0):
+            poz+=1
+        else:
+            null+=1
+        i+=1
+    print(f"Negatív számok {neg} db, pozitív számok {poz} db, nullák {null} db. ")

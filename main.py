@@ -10,4 +10,8 @@ print("3.feladat")
 #metodusok.harmadik("a", "programozas")
 
 print("4.feladat")
-metodusok.negyedik()
+#metodusok.negyedik()
+
+print("5.feladat")
+metodusok.otodik()
+metodusok.a_otodik(vel_lista=metodusok.otodik())
